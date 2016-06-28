@@ -1,1 +1,73 @@
 @import 'material-design-lite';
+
+.state-boundry {
+  fill: none;
+  stroke: black;
+  stroke-width: .5px;
+}
+
+.country-boundry {
+  fill: none;
+  stroke: black;
+  stroke-width: .5px;
+}
+
+.totalDead {
+  fill: none;
+  stroke-width: 1.5px;
+  stroke: #de2d26;
+}
+
+.totalInjured {
+  fill: none;
+  stroke-width: 1.5px;
+  stroke: #fcbba1;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis--x path {
+  display: none;
+}
+
+.axis--y text {
+  text-anchor: "end";
+}
+
+path.pie {
+  stroke: transparent;
+}
+
+path.dead {
+  fill: #de2d26;
+}
+
+path.injured {
+  fill: #fcbba1;
+}
+
+.voronoi-line {
+  fill: transparent;
+  stroke: none;
+}
+
+.d3-line--rect {
+  fill: none;
+  pointer-events: all
+}
+
+line.selected {
+  stroke-width: 1px;
+  stroke: black;
+  fill: transparent;
+}
+
+.highlighted-circle  path.pie {
+  stroke-width: 2px;
+  stroke: black;
+}

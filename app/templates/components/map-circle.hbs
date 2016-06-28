@@ -1,0 +1,7 @@
+<g transform={{transform}}>
+  {{#each pie as |slice| }}
+    <path d={{slice.path}} class={{slice.className}} />
+  {{/each}}
+</g>
+<path class='voronoi-line'  d={{voronoiPath}}></path>
+

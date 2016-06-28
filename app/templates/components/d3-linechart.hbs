@@ -1,0 +1,22 @@
+<g class='d3-line--container' transform={{gTransform}}>
+  <rect class='d3-line--rect' width={{rectWidth}} height={{rectHeight}} />
+  <g class='axis axis--y'>
+  </g>
+  {{#each lines as |line|}}
+    <path d={{line.path}} class={{line.className}} />
+  {{/each}}
+  <g transform={{xAxisTransform}} class='axis axis--x'>
+  </g>
+  {{#if date }}
+    {{#each hoverCircles as |circle| }}
+      <g class={{circle.className}} transform={{circle.translate}}>
+        <circle r='4.5' />
+      </g>
+    {{/each}}
+  {{/if}}
+  {{#if cluster }}
+    {{#each highlightedData as |line| }}
+      <line class={{line.className}}  x1={{line.x1}} x2={{line.x2}} y1={{line.y1}} y2={{line.y2}} />
+    {{/each}}
+  {{/if}}
+</g>

@@ -1,0 +1,14 @@
+<path d={{countryPath}} class='country-boundry'></path>
+<path d={{statePath}} class='state-boundry'></path>
+
+{{#each mapData as |datum|}}
+  {{map-circle
+    datum=datum
+    yExtent=yTotalExtent
+    rScale=rScale
+    projection=projection
+    cluster=cluster
+    highlightedClusters=highlightedClusters
+  }}
+{{/each}}
+
