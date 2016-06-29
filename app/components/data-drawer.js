@@ -31,7 +31,7 @@ export default Ember.Component.extend({
     if(count === 1) {
       return '<p> <u class="dead--copy">1</u> person died </p>';
     } else {
-      return `<p> <u class="dead--copy">${count}</u> people </p>`;
+      return `<p> <u class="dead--copy">${count}</u> people died </p>`;
     }
   }),
   injuredCount: computed('filteredData', 'data',  function() {
