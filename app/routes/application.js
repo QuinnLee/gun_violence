@@ -2,10 +2,10 @@ import Ember from 'ember';
 import _ from 'npm:lodash';
 import moment from 'npm:moment';
 
-const { get, set, RSVP, $ } = Ember;
+const { get, RSVP, $ } = Ember;
 
 const DATA_URL = 'https://raw.githubusercontent.com/QuinnLee/gun_violence/master/data/data.json';
-const LOCATION_URL = 'https://raw.githubusercontent.com/QuinnLee/gun_violence/master/data/location_clustered.json'
+const LOCATION_URL = 'https://raw.githubusercontent.com/QuinnLee/gun_violence/master/data/location_clustered.json';
 const USA_MAP = 'https://raw.githubusercontent.com/QuinnLee/gun_violence/master/data/us.json';
 
 export default Ember.Route.extend({

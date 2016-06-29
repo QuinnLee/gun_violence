@@ -55,24 +55,24 @@ export default Ember.Component.extend({
   }),
   statePath: computed('map', function() {
     let map = get(this, 'map');
-    let mesh = topojson.mesh(map, get(map, 'objects.states'), (a, b) => a !== b)
+    let mesh = topojson.mesh(map, get(map, 'objects.states'), (a, b) => a !== b);
     let path = get(this, 'path');
     return path(mesh);
   }),
   countryPath: computed('map', function() {
     let map = get(this, 'map');
-    let features = topojson.feature(map, get(map, 'objects.land'))
+    let features = topojson.feature(map, get(map, 'objects.land'));
     let path = get(this, 'path');
     return path(features);
   }),
   yTotalExtent: computed('data', function() {
-    let map = _.map(get(this, 'data'), 'total')
+    let map = _.map(get(this, 'data'), 'total');
     return d3.extent(map);
   }),
   rScale: computed('yTotalExtent', function() {
     return d3.scale.linear()
       .range(get(this, 'rRange'))
-      .domain(get(this, 'yTotalExtent'))
+      .domain(get(this, 'yTotalExtent'));
   }),
   mouseLeave() {
     set(this, 'cluster', null);

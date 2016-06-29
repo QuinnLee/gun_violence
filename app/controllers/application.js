@@ -1,5 +1,4 @@
 import Ember from 'ember';
-import d3 from 'npm:d3';
 import _ from 'npm:lodash';
 import moment from 'npm:moment';
 
@@ -65,6 +64,6 @@ export default Ember.Controller.extend({
           coords: get(firstValue, 'coords'),
         };
       })
-      .value()
+      .value();
   })
 });

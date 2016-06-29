@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import d3 from 'npm:d3';
 import _ from 'npm:lodash';
+import moment from 'npm:moment';
 
 const { get, computed } = Ember;
 
@@ -26,7 +27,7 @@ export default Ember.Component.extend({
   }),
   deadCount: computed('filteredData', 'data',  function() {
     let data = get(this, 'filteredData') || get(this, 'data');
-    let count = _.reduce(data, (memo, d) => memo + get(d, 'dead'), 0)
+    let count = _.reduce(data, (memo, d) => memo + get(d, 'dead'), 0);
     if(count === 1) {
       return '<p> <u class="dead--copy">1</u> person died </p>';
     } else {
@@ -35,7 +36,7 @@ export default Ember.Component.extend({
   }),
   injuredCount: computed('filteredData', 'data',  function() {
     let data = get(this, 'filteredData') || get(this, 'data');
-    let count = _.reduce(data, (memo, d) => memo + get(d, 'injured'), 0)
+    let count = _.reduce(data, (memo, d) => memo + get(d, 'injured'), 0);
     if(count === 1) {
       return '<p><u class="injured--copy">1</u> person got injured</p>';
     } else {

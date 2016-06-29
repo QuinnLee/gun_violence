@@ -69,10 +69,10 @@ export default Ember.Component.extend({
     let date = get(this, 'date');
     let data = get(this, 'data');
 
-    let bisector = d3.bisector((d) => get(d, 'date')).left
+    let bisector = d3.bisector((d) => get(d, 'date')).left;
     let i = bisector(data, date, 1);
-    let d0 = data[i - 1]
-    let d1 = data[i]
+    let d0 = data[i - 1];
+    let d1 = data[i];
     return date - get(d0, 'date') > get(d1, 'date') - date ? d1 : d0;
   }),
   hoverCircles: computed('selectedDate', 'yScale', 'xScale', 'y',  function() {
@@ -81,7 +81,7 @@ export default Ember.Component.extend({
     let yScale = get(this, 'yScale');
     let xScale = get(this, 'xScale');
 
-    if(!d) { return null };
+    if(!d) { return null; }
     return _.flatMapDeep(y, (yValue) => {
       let x =  xScale(get(d, 'date'));
       let y =  yScale(get(d, yValue));
@@ -95,10 +95,10 @@ export default Ember.Component.extend({
     let margin = get(this, 'margin');
     let height = get(this, 'height');
 
-    if(!highlighted) { return null };
+    if(!highlighted) { return null; }
     return _.map(highlighted, (d) => {
       let x =  xScale(get(d, 'date'));
-      return { x1: x, x2: x, y1: 0, y2: height - margin *2, className: 'selected' }
+      return { x1: x, x2: x, y1: 0, y2: height - margin *2, className: 'selected' };
     });
   }),
   lines: computed('yScale', 'xScale', 'x', 'y', 'data', function() {
@@ -132,7 +132,7 @@ export default Ember.Component.extend({
       .attr("dy", ".71em")
       .style("text-anchor", "end");
 
-    let xScale = get(this, 'xScale')
+    let xScale = get(this, 'xScale');
     let emberComponent = this;
     d3.select('rect.d3-line--rect')
       .on('mousemove', function() {
