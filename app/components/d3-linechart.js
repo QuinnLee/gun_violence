@@ -9,7 +9,7 @@ export default Ember.Component.extend({
   height: 200,
   ticks: 48,
   attributeBindings: ['height', 'width'],
-  margin: 50,
+  margin: 30,
   rectHeight: computed('height', 'margin', function() {
     let margin = get(this, 'margin');
     let height = get(this, 'height');

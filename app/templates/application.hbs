@@ -1,21 +1,29 @@
-<div class="mdl-grid">
-  {{usa-map
-    width=width
-    map=map
-    data=groupByLocation
-    cluster=cluster
-    highlighted=filteredData
-    y=y
-  }}
-  {{d3-linechart
-    data=groupedByDate
-    highlighted=filteredData
-    accessors=accessors
-    cluster=cluster
-    date=date
-    x=x
-    y=y
-    width=width
-   }}
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer">
+  <div class="mdl-layout__drawer">
+    <span class="mdl-layout__title"> Mass Shootings </span>
+    {{data-drawer filteredData=filteredData data=data }}
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link" href="https://www.buzzfeed.com/jsvine/heres-how-little-time-america-gets-between-mass-shootings">Based off the data from this Buzzfeed article</a>
+      <a class="mdl-navigation__link" href="https://github.com/QuinnLee/gun_violence">Repo for the visualization is here</a>
+    </nav>
+    <ul class="mdl-list">
+      <li class="mdl-list__item mdl-list__item--two-line">
+        <span class="mdl-list__item-primary-content">
+          Special Thanks to <a href='https://github.com/jsvine'> jsvine </a>
+        </span>
+      </li>
+    </ul>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--8-col">
+        {{usa-map width=width map=map data=groupByLocation cluster=cluster highlighted=filteredData y=y }}
+        {{d3-linechart data=groupedByDate highlighted=filteredData accessors=accessors cluster=cluster date=date x=x y=y width=width }}
+      </div>
+      <div class="mdl-cell mdl-cell--3-col">
+        {{data-info filteredData=filteredData date=date}}
+      </div>
+    </div>
+  </main>
 </div>
 

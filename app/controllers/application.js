@@ -6,7 +6,7 @@ import moment from 'npm:moment';
 const { computed, get } = Ember;
 
 export default Ember.Controller.extend({
-  width: 1000,
+  width: 760,
   cluster: null,
   date: null,
   data: computed.alias('model.data'),

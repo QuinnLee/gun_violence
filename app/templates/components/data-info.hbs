@@ -1,0 +1,15 @@
+<ul class='mdl-list data-list'>
+  {{#each filteredData as |row| }}
+  <li class='mdl-list__item mdl-list__item--two-line list-item'>
+    <span class="mdl-list__item-primary-content">
+      <span> {{moment-format row.date 'MMMM Do'}} </span>
+      <span class="mdl-list__item-sub-title">
+        {{row.location}}
+        Dead: {{row.dead}}
+        Injured: {{row.injured}}
+      </span>
+    </span>
+  </li>
+  {{/each}}
+</ul>
+

@@ -20,7 +20,7 @@ export default Ember.Route.extend({
       let { data, locationCoords, map } = model;
 
       data = _.map(data, (datum) => {
-        let { date, location, dead, injured } = datum;
+        let { date, article, location, dead, injured } = datum;
         let coords = get(locationCoords, location) || locationCoords[location]; //lawl st.louis...
         let cluster = get(coords, 'cluster');
         let total  = dead + injured;
@@ -34,6 +34,7 @@ export default Ember.Route.extend({
           injured,
           total,
           cluster,
+          article,
           moment: moment(date)
         };
       });
